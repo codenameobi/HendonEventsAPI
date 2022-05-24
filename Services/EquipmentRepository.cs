@@ -36,7 +36,7 @@ namespace HendonEventsAPI.Services
 
         public void Insert(Equipments item)
         {
-            throw new NotImplementedException();
+            _equipmentList.Add(item);
         }
 
         public void Update(Equipments item)
