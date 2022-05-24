@@ -20,7 +20,7 @@ namespace HendonEventsAPI.Services
         }
         public void Delete(string id)
         {
-            throw new NotImplementedException();
+            _equipmentList.Remove(this.Find(id));
         }
 
         public bool DoesItemExist(string id)
@@ -30,7 +30,7 @@ namespace HendonEventsAPI.Services
 
         public Equipments Find(string id)
         {
-            throw new NotImplementedException();
+            return _equipmentList.FirstOrDefault(item => item.ID == id);
         }
 
         public void Insert(Equipments item)

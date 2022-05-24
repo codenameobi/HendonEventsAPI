@@ -78,6 +78,25 @@ namespace HendonEventsAPI.Controllers
             }
 			return NoContent();
         }
+
+		[HttpDelete("{id}")]
+		public IActionResult Delete(string id)
+        {
+            try
+            {
+				var item = _equipmentRepository.Find(id);
+				if (item == null)
+                {
+					return NotFound(ErrorCode.RecordNotFound.ToString());
+                }
+				_equipmentRepository.Delete(id);
+            }
+			catch (Exception)
+            {
+				return BadRequest(ErrorCode.CouldNotDeleteItem.ToString());
+            }
+			return NoContent();
+        }
 	}
 }
 
