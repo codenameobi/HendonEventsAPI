@@ -1,10 +1,9 @@
-﻿using System;
-using HendonEventsAPI.Models;
-using HendonEventsAPI.Repository;
+﻿using HendonEventsAPI.Models;
+using HendonEventsAPI.Interfaces;
 
 namespace HendonEventsAPI.Services
 {
-	public class EquipmentRepository : IEquipmentRepository
+    public class EquipmentRepository : IEquipmentRepository
 	{
 
         public List<Equipments> _equipmentList;
@@ -26,7 +25,7 @@ namespace HendonEventsAPI.Services
 
         public bool DoesItemExist(string id)
         {
-            throw new NotImplementedException();
+            return _equipmentList.Any(item => item.ID == id);
         }
 
         public Equipments Find(string id)
@@ -41,7 +40,10 @@ namespace HendonEventsAPI.Services
 
         public void Update(Equipments item)
         {
-            throw new NotImplementedException();
+            var equipment = this.Find(item.ID);
+            var index = _equipmentList.IndexOf(equipment);
+            _equipmentList.RemoveAt(index);
+            _equipmentList.Insert(index, item);
         }
 
         private void InitializeData()

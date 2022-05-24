@@ -1,4 +1,4 @@
-﻿using HendonEventsAPI.Repository;
+﻿using HendonEventsAPI.Interfaces;
 using HendonEventsAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);

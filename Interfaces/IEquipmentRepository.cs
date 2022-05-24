@@ -1,7 +1,7 @@
 ﻿using System;
 using HendonEventsAPI.Models;
 
-namespace HendonEventsAPI.Repository
+namespace HendonEventsAPI.Interfaces
 {
 	public interface IEquipmentRepository
 	{
