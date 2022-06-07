@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'hendonevents'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C0E3A0FB42074A77A9231876ADB674E8 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9064567361754BDFBB32E72E1EF4FE62 }}
           package: .
